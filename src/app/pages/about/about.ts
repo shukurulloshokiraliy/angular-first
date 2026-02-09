@@ -2,17 +2,17 @@ import { Component } from '@angular/core';
 import { Car } from '../../models/car';
 import { FormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
-import { RouterModule } from '@angular/router'; // SHUNI QO'SHING
+import { RouterModule } from '@angular/router'; 
 
 @Component({
   selector: 'app-about',
   standalone: true,
-  imports: [FormsModule, CommonModule, RouterModule], // SHU YERGA HAM QO'SHING
+  imports: [FormsModule, CommonModule, RouterModule], 
   templateUrl: './about.html',
   styleUrl: './about.css',
 })
 export class About {
-  // Avvalgi kod o'zgarmasdan qoladi...
+  
   carName: string = ''; 
   carYear: Date = new Date();
 
