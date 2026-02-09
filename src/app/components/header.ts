@@ -1,57 +1,36 @@
+// header.component.ts
 import { Component } from '@angular/core';
-import { CommonModule } from '@angular/common'; // NgFor uchun kerak
+import { RouterModule } from '@angular/router';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-header',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule, RouterModule],
   template: `
-    <div class="p-6 max-w-md mx-auto bg-white rounded-xl shadow-lg space-y-4">
-      <h2 class="text-2xl font-bold text-green-600 border-bottom">Todo List</h2>
-      
-      <div class="flex gap-2">
-        <input 
-          #todoInput
-          type="text" 
-          placeholder="Add Todo" 
-          class="border-2 border-gray-200 p-2 rounded-lg flex-grow focus:outline-none focus:border-green-500"
-          (keyup.enter)="addTodo(todoInput.value); todoInput.value = ''" 
-        />
-        <button 
-          (click)="addTodo(todoInput.value); todoInput.value = ''"
-          class="bg-green-500 text-white px-4 py-2 rounded-lg hover:bg-green-600 transition">
-          Add
-        </button>
-      </div>
+    <header class="bg-slate-900 shadow-lg border-b border-emerald-500/20">
+      <nav class="max-w-7xl mx-auto px-6 h-16 flex items-center justify-between">
+        <div class="flex items-center gap-2">
+          <div class="w-8 h-8 bg-emerald-500 rounded-lg flex items-center justify-center font-bold text-white">A</div>
+          <span class="text-xl font-bold text-white tracking-tight">Angular<span class="text-emerald-400">First</span></span>
+        </div>
 
-      <ul class="space-y-2">
-        <li *ngFor="let todo of todos; let i = index" 
-            class="flex justify-between items-center bg-gray-50 p-3 rounded-lg group">
-          <span class="text-gray-700">{{ todo }}</span>
-          <button 
-            (click)="removeTodo(i)"
-            class="text-red-400 hover:text-red-600 opacity-0 group-hover:opacity-100 transition">
-            Delete
-          </button>
-        </li>
-      </ul>
-      
-    
-    </div>
+        <div class="flex gap-1">
+          <a routerLink="/" 
+             routerLinkActive="bg-emerald-500/10 text-emerald-400" 
+             [routerLinkActiveOptions]="{exact: true}"
+             class="px-4 py-2 rounded-md text-sm font-medium text-slate-300 hover:text-white transition-all">
+             Home
+          </a>
+          
+          <a routerLink="/about" 
+             routerLinkActive="bg-emerald-500/10 text-emerald-400"
+             class="px-4 py-2 rounded-md text-sm font-medium text-slate-300 hover:text-white transition-all">
+             About
+          </a>
+        </div>
+      </nav>
+    </header>
   `
 })
-export class HeaderComponent {
-  
-  todos: string[] = ['Angular bilan ishlash'];
-
-
-  addTodo(newTodo: string) {
-    if (newTodo.trim()) {
-      this.todos.push(newTodo);
-    }
-  }
-
-  removeTodo(index: number) {
-    this.todos.splice(index, 1);
-  }
-}
+export class HeaderComponent {}

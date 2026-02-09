@@ -1,27 +1,23 @@
-<h3 class="car-title">{{ carName || 'Mashina nomi' }}</h3>
-
-
-
-<div class="box">
-    <input 
-        class="Nameinput" 
-        type="text" 
-        placeholder="Mashina nomi" 
-        [(ngModel)]="carName">
+<div class="mb-6" class="About-link">
+    <a routerLink="/" 
+       class="inline-flex items-center gap-2 px-4 py-2 rounded-md text-2xl font-medium text-slate-600 hover:text-blue-500 hover:bg-blue-100 transition-all no-underline border border-transparent hover:border-blue-200">
     
-    <input 
-        class="Date" 
-        type="date" 
-        [(ngModel)]="carYear">
-        
-    <button (click)="onSubmit()">Qo'shish</button>
-
-    
-</div>
-<ul class="car-list">
-    <li *ngFor="let item of cars" class="car-item">
-        <div class="car-id">ID: {{ item.id }}</div>
-        <div class="car-name">Model: {{ item.name }}</div>
-        <div class="car-year">Yili: {{ item.year | date:'yyyy' }}</div>
-    </li>
-</ul>
+      Back to Home
+    </a>
+  </div>
+  
+  <h3 class="car-title">{{ carName || 'Mashina nomi' }}</h3>
+  
+  <ul class="car-list">
+      <li *ngFor="let item of cars" class="car-item">
+          <div class="car-id">ID: {{ item.id }}</div>
+          <div class="car-name">Model: {{ item.name }}</div>
+          <div class="car-year">Yili: {{ item.year | date:'yyyy' }}</div>
+      </li>
+  </ul>
+  
+  <div class="box">
+      <input class="Nameinput" type="text" placeholder="Mashina nomi" [(ngModel)]="carName">
+      <input class="Date" type="date" [(ngModel)]="carYear">
+      <button (click)="onSubmit()">Qo'shish</button>
+  </div>
