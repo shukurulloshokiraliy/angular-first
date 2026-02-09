@@ -5,7 +5,8 @@ import { Component } from '@angular/core';
   standalone: true,
   template: `
   <footer class="footer">
-    <p class="text-gray-500">Footer</p>
+    <p class="text-gray-500"> This Footer</p>
+
   </footer>
   `
 })

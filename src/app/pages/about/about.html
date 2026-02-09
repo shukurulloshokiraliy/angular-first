@@ -1,0 +1,27 @@
+<h3 class="car-title">{{ carName || 'Mashina nomi' }}</h3>
+
+
+
+<div class="box">
+    <input 
+        class="Nameinput" 
+        type="text" 
+        placeholder="Mashina nomi" 
+        [(ngModel)]="carName">
+    
+    <input 
+        class="Date" 
+        type="date" 
+        [(ngModel)]="carYear">
+        
+    <button (click)="onSubmit()">Qo'shish</button>
+
+    
+</div>
+<ul class="car-list">
+    <li *ngFor="let item of cars" class="car-item">
+        <div class="car-id">ID: {{ item.id }}</div>
+        <div class="car-name">Model: {{ item.name }}</div>
+        <div class="car-year">Yili: {{ item.year | date:'yyyy' }}</div>
+    </li>
+</ul>

@@ -1,0 +1,86 @@
+
+.car-title {
+    color: rgb(255, 60, 0);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin-bottom: 20px;
+}
+
+
+.car-list {
+    margin-top: 50px;
+    margin-left: 30px;
+    list-style: none;
+    padding: 0;
+        max-width: 400px;
+}
+
+.car-item {
+    margin-bottom: 15px;
+    padding: 15px;
+    border-left: 5px solid #4c66e6;
+    background-color: #f8f9fa;
+    border-radius: 4px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+    animation: slideIn 0.4s ease-out;
+}
+
+.car-id {
+    font-weight: bold;
+    color: #888;
+    font-size: 0.9em;
+}
+
+.car-name {
+    font-size: 1.2em;
+    color: #333;
+    margin: 5px 0;
+}
+
+
+.box {
+    margin-left: 30px;
+    width: 300px;
+    display: flex;
+    
+    gap: 15px;
+    margin-top: 30px;
+    align-items: center;
+}
+
+.Nameinput {
+    border: 1.5px solid #ddd;
+    border-radius: 8px;
+    padding: 10px;
+    background-color: #e0fbfc;
+    flex: 2;
+    transition: all 0.3s;
+}
+
+.Date {
+    border: 1.5px solid #ddd;
+    border-radius: 8px;
+    padding: 10px;
+    background-color: rgb(255, 60, 0);
+    color: white;
+    flex: 1;
+}
+
+.box button {
+    border: none;
+    border-radius: 8px;
+    padding: 10px 25px;
+    background-color: #4c66e6;
+    color: white;
+    cursor: pointer;
+    font-weight: bold;
+    transition: transform 0.2s;
+}
+
+.box button:hover {
+    transform: scale(1.05);
+}
+
+@keyframes slideIn {
+    from { opacity: 0; transform: translateX(-10px); }
+    to { opacity: 1; transform: translateX(0); }
+}
